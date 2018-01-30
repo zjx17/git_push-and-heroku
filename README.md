@@ -101,6 +101,6 @@ http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b0
 
     heroku pg:reset --confirm trade1-1 #heroku name
     
-    heroku  pg:push zzz_development postgresql-adjacent-24312  #my-db to online-db(can get from heroku)
+    heroku  pg:push zzz_development postgresql-reticulated-63063  #my-db to online-db(can get from heroku)
     
 <br>引自 blessdyb.iteye.com/blog/781837 </br>
