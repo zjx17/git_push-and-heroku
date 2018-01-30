@@ -72,3 +72,35 @@ http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b0
 ![image](https://github.com/zjx17/git_push-and-heroku/blob/master/picture/16.png)
 
 <br>引自 http://blog.csdn.net/lulei1217/article/details/51137906</br>
+
+## heroku
+
+首先在上面注册一个帐户（提供 email, QQ, 163不行; not a robot: 用蓝灯 ）。之后我们来将之前的应用部署到 heroku 上去。
+
+进入刚才的工程目录:
+
+    gem install heroku
+
+    hero create projectname   # heroku 会为你生成一个 projectname.heroku.com 的网址 
+
+    heroku keys:add ~/.ssh/id_rsa.pub
+    
+    git remote rm heroku
+    
+    git remote add heroku git@heroku.com:name-to-the-new-one  #heroku_project.git
+    
+    git push heroku master
+    
+    heroku rake db:migrate
+    
+之后，我们就可以通过访问 http://projectname.heroku.com 来查看我们的应用了.
+    
+### 如果我们想同时把当前本地数据库中的数据也 push 到 heroku 中去，我们需要进行如下操作:
+
+    gem install taps
+
+    heroku pg:reset --confirm trade1-1 #heroku name
+    
+    heroku  pg:push zzz_development postgresql-adjacent-24312  #my-db to online-db(can get from heroku)
+    
+<br>引自 blessdyb.iteye.com/blog/781837 </br>
